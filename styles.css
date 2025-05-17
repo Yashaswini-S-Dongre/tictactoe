@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+
+#game-container {
+    background: linear-gradient(45deg, #0f0f0f, #1c1c1c);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 40px rgba(0, 255, 255, 0.2);
+    width: 360px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00ff99;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ff99, 0 0 30px #00ff99;
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2d2d;
+    font-size: 2rem;
+    color: #00ff99;
+    border: 2px solid #1a1a1a;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #444;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+
+button {
+    background-color: #00ff99;
+    color: #121212;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #009c73;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.winner-text {
+    color: #00ff99;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
+}
+
+@keyframes win {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.winner-text {
+    animation: win 1s ease-in-out infinite;
+}
